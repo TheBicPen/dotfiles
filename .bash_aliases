@@ -10,5 +10,15 @@ alias config='/usr/bin/git --git-dir=/home/alex/.cloud_cfg/ --work-tree=/home/al
 
 
 #convenience: unlikely to ever be changed
-alias la='ls -a'
+alias la='ls -A'
+
+
+
+#default aliases
+alias cp="cp -i"                          # confirm before overwriting s>
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+
 

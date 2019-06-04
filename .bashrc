@@ -91,11 +91,12 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
+##use .bash_aliases instead
+#alias cp="cp -i"                          # confirm before overwriting something
+#alias df='df -h'                          # human-readable sizes
+#alias free='free -m'                      # show sizes in MB
+#alias np='nano -w PKGBUILD'
+#alias more=less
 
 xhost +local:root > /dev/null 2>&1
 
@@ -141,3 +142,21 @@ ex ()
 
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+
+
+# use aliases file
+eval $(thefuck --alias f)
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+eval $(thefuck --alias f)
+
+#wine-osu stuff
+export WINEPREFIX="$HOME/.wine_osu" # This is the path to a hidden folder in your home folder.
+export WINEARCH=win32 # Only needed when executing the first command with that WINEPREFIX
+# Arch Linux/wine-osu users should uncomment next line
+# to update PATH to make sure we're using the right Wine binary
+export PATH=/opt/wine-osu/bin:$PATH
+
