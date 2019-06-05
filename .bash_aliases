@@ -1,7 +1,8 @@
 #Alex's bash aliases. Aliases should be located in this file, not in .bashrc.
 
 #controversial ones: placed near the top for easy toggling
-alias cd='cd && ls'
+
+
 
 
 #custom stuff
@@ -22,3 +23,12 @@ alias np='nano -w PKGBUILD'
 alias more=less
 
 
+#FUNCTIONS
+
+function cd() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && ls
+}
