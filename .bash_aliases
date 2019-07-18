@@ -12,7 +12,9 @@ alias config='/usr/bin/git --git-dir=/home/alex/.cloud_cfg/ --work-tree=/home/al
 
 #convenience: unlikely to ever be changed
 alias la='ls -A'
-
+alias ll='ls -l'
+alias md='mkdir'
+alias cls='clear'
 
 
 #default aliases
