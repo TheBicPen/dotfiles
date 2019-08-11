@@ -68,3 +68,6 @@ exec $(get_session)
 #my stuff
 betterlockscreen -u /home/alex/Pictures/backgrounds
 betterlockscreen -w
+
+feh --bg-max --randomize --recursive ~/Pictures/backgrounds
+
