@@ -191,14 +191,14 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
 # switch to workspace with alt
-bindsym Mod1+1 workspace $ws1
-bindsym Mod1+2 workspace $ws2
-bindsym Mod1+3 workspace $ws3
-bindsym Mod1+4 workspace $ws4
-bindsym Mod1+5 workspace $ws5
-bindsym Mod1+6 workspace $ws6
-bindsym Mod1+7 workspace $ws7
-bindsym Mod1+8 workspace $ws8
+#bindsym Mod1+1 workspace $ws1
+#bindsym Mod1+2 workspace $ws2
+#bindsym Mod1+3 workspace $ws3
+#bindsym Mod1+4 workspace $ws4
+#bindsym Mod1+5 workspace $ws5
+#bindsym Mod1+6 workspace $ws6
+#bindsym Mod1+7 workspace $ws7
+#bindsym Mod1+8 workspace $ws8
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -468,3 +468,6 @@ for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 
 exec --no-startup-id /usr/share/python-i3-py/i3-alternating-layout/alternating_layouts.py
 exec --no-startup-id variety
+
+
+bindsym $mod+grave exec autorandr -c
