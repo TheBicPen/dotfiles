@@ -1,0 +1,16 @@
+# Description: Custom Service Unit file
+# File: /etc/systemd/system/x11vnc.service
+[Unit]
+Description="x0vncserver after login"
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStartPre=/usr/bin/bash -c "/usr/bin/systemctl set-environment XUUID=$(find /var/run/sddm/ -type f)"
+ExecStart=/usr/bin/x0vncserver -rfbport 5999 -rfbauth /home/alex/.vnc/passwd -display :0
+ExecStop=/usr/bin/vncserver -kill
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

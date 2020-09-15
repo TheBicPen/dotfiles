@@ -1,0 +1,2 @@
+atlassian.com/git/tutorials/dotfiles
+x0vncserver service wont work immediately upon startup. restart it manually via ssh.
