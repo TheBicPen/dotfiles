@@ -1,0 +1,11 @@
+[Unit]
+Description="start x11vnc at login screen"
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStartPre=/usr/bin/bash -c "/usr/bin/systemctl set-environment XUUID=$(find /var/run/sddm/ -type f)" #Run as root
+ExecStart=/usr/bin/x11vnc -forever -rfbport 5999 -display :0 -rfbauth /home/alex/.vnc/passwd -auth ${XUUID}
+ExecStop=pkill x11vnc
+[Install]
+WantedBy=graphical.target
